@@ -10,9 +10,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    @user = User.new(sign_up_params)
+    unless @user.valid?
+      render new and return
+    end
+    session["user_data"] = {user: @user.attributes}
+    
+  end
 
   # GET /resource/edit
   # def edit
