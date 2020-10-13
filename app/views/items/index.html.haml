@@ -1,9 +1,18 @@
 %h1.bg-info.p-3 tako-market
 .container
-  .row
-    .col
-      = link_to "#" do
-        新規登録
-    .col
-      = link_to "#" do
-        ログイン
+  - if user_signed_in?
+    .row
+      .col
+        = current_user.nickname
+        = current_user.email
+      .col
+        = link_to destroy_user_session_path, method: :delete do
+          LOG OUT
+  - else
+    .row
+      .col
+        = link_to new_user_registration_path do
+          SIGN UP
+      .col
+        = link_to new_user_session_path do
+          SIGN IN
