@@ -12,7 +12,7 @@
     .field.p-3.text-info.w-50
       = f.label :prefecture
       %br/
-      = f.collection_select Prefecture.all, autofocus: true, autocomplete: "price", class: "form-control"
+      = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "---", selected: 3}, class: "form-control"
     .field.p-3.text-info.w-50
       = f.label :status
       %br/
