@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   
   def index
-    @items = Item.all.limit(4)
+    @items = Item.last(4)
   end
 
   def new
