@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_17_122200) do
+ActiveRecord::Schema.define(version: 2020_10_18_080838) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "postal_code"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2020_10_17_122200) do
     t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "image"
+    t.string "image"
     t.integer "prefecture_id"
   end
 
