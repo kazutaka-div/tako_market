@@ -2,6 +2,8 @@
   .card-header.text-success
     = item.name
   .card-body.text-success
-    = item.image
+    -# item.image.to_sでも表示が可能    
+    = image_tag item.image.url, alt: '画像がないです', height: '150px', width: '150px'
   .card-footer.border-success
+    price:
     = item.price
