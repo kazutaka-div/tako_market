@@ -18,9 +18,6 @@
       %br/
       = f.text_field :status, autofocus: true, autocomplete: "status", class: "form-control"
     .field.p-3.text-info.w-50
-      = f.label :image
-      %br/
-      = f.file_field :image, autofocus: true, autocomplete: "image", class: "form-control"
-
-    
+      = f.fields_for :images do |image|
+        = image.file_field :src
     = f.submit "submit", class: "form-control w-50"
