@@ -1,0 +1,9 @@
+.card.w-25.m-3.border-success
+  .card-header.text-success
+    = item.name
+  .card-body.text-success
+    -# item.image.to_sでも表示が可能    
+    = image_tag item.images[0].src.url, alt: '画像がないです', height: '100px', width: '100px', class: "image"
+  .card-footer.border-success
+    price:
+    = item.price
