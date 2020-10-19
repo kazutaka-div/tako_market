@@ -5,8 +5,11 @@ class ItemsController < ApplicationController
   end
 
   def new
+    
     @item = Item.new
-    @item.images.new
+    3.times do
+      @item.images.new
+    end
   end
 
   def create
